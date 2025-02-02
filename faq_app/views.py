@@ -11,7 +11,7 @@ class FAQViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         """
-        Optionally restricts the returned FAQs by filtering against
+        Optionally restricting the returned FAQs by filtering against
         query parameters in the URL.
         """
         queryset = FAQ.objects.all()
@@ -25,7 +25,7 @@ class FAQViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['post'])
     def clear_cache(self):
         """
-        Clear the FAQ cache
+        Clearing the FAQ cache
         """
         cache.clear()
         return Response({'status': 'cache cleared'})

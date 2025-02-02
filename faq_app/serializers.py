@@ -7,6 +7,7 @@ class FAQSerializer(serializers.ModelSerializer):
         fields = ['id', 'question', 'answer', 'created_at', 'updated_at']
 
     def to_representation(self, instance):
+        """For representation of FAQ instance"""
         request = self.context.get('request')
         lang = request.query_params.get('lang', 'en') if request else 'en'
         
