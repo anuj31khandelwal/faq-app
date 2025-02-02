@@ -27,8 +27,8 @@ A Django-based FAQ management system with multilingual support, WYSIWYG editor i
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/faq-system.git
-cd faq-system
+git clone https://github.com/yourusername/faq-app.git
+cd faq-app
 ```
 
 2. Set up environment variables:
@@ -121,44 +121,6 @@ Request Body:
     "answer": "Django is a web framework..."
 }
 ```
-
-## Running Tests 🧪
-
-```bash
-# Run all tests
-pytest
-
-# Run with coverage
-coverage run -m pytest
-coverage report
-```
-
-## Contributing 🤝
-
-1. Fork the repository
-2. Create a feature branch:
-```bash
-git checkout -b feature/your-feature-name
-```
-
-3. Commit your changes following conventional commits:
-```bash
-git commit -m "feat: Add new feature"
-git commit -m "fix: Fix bug in translation"
-git commit -m "docs: Update API documentation"
-```
-
-4. Push to your branch and create a Pull Request
-
-### Commit Convention
-
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation updates
-- `style:` Code style changes
-- `refactor:` Code refactoring
-- `test:` Adding or updating tests
-- `chore:` Maintenance tasks
 
 ## Deployment 🚀
 
