@@ -12,18 +12,21 @@ class TestFAQAPI:
     
     @pytest.fixture
     def faq_instance(self):
+        """Creating a FAQ instance"""
         return FAQ.objects.create(
             question="What is Django?",
             answer="Django is a web framework."
         )
     
     def test_list_faqs(self, api_client, faq_instance):
+        """Testing to list FAQs"""
         url = reverse('faq-list')
         response = api_client.get(url)
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data['results']) == 1
     
     def test_create_faq(self, api_client):
+        """Testing to create a FAQ"""
         url = reverse('faq-list')
         data = {
             'question': 'Test Question',
@@ -34,6 +37,7 @@ class TestFAQAPI:
         assert FAQ.objects.count() == 1
     
     def test_get_faq_with_language(self, api_client, faq_instance):
+        """Testing to get a FAQ with language"""
         url = reverse('faq-detail', kwargs={'pk': faq_instance.pk})
         response = api_client.get(f"{url}?lang=hi")
         assert response.status_code == status.HTTP_200_OK
