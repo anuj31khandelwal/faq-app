@@ -35,7 +35,7 @@ class FAQ(models.Model):
 
     def get_translated_content(self, lang='en'):
         """
-        Get translated content with caching
+        Getting translated content with caching
         """
         cache_key = f'faq_{self.id}_{lang}'
         cached_content = cache.get(cache_key)
@@ -52,7 +52,7 @@ class FAQ(models.Model):
 
     def _get_language_content(self, lang):
         """
-        Get content for specified language
+        fetching content for specified language
         """
         if lang == 'en':
             return {
@@ -73,7 +73,7 @@ class FAQ(models.Model):
 
     def _translate_text(self, text, lang):
         """
-        Translate text using Google Translate
+        Translating text using Google Translate
         """
         try:
             translator = Translator()
@@ -85,7 +85,7 @@ class FAQ(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override save to handle translations
+        Overriding save to handle translations
         """
         is_new = self.pk is None
         super().save(*args, **kwargs)
